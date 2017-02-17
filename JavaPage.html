@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Have Fun</title>
+  </head>
+  <h1 align="center">Try Everything</h1>
+  <body>
+
+Clock:
+<p id="demo"></p>
+
+<p>Click and Answer.</p>
+<button onclick="myFunction()">Enter Name here.</button>
+<p id="name"></p>
+
+<p>More Information</p>
+<button onclick="birthFunction()">Enter Birthdate here.</button>
+<p id="birthdate"></p>
+
+  <p id="date">Date:</p>
+
+<script>
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+if(dd<10) {
+    dd='0'+dd
+}
+if(mm<10) {
+    mm='0'+mm
+}
+today = mm+'/'+dd+'/'+yyyy;
+document.write(today);
+
+
+var myVar = setInterval(myTimer, 1000);
+function myTimer() {
+  var d = new Date();
+  document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+
+
+function myFunction()
+{
+      var nameEntered = prompt();
+    {
+      if (nameEntered != null)
+      {
+        document.getElementById("name").innerHTML =
+        "Hello " + nameEntered + "! How are you?";
+      }
+    }
+}
+function birthFunction()
+{
+  var enterBirthInfo = prompt();
+  if (enterBirthInfo != null)
+  {
+      document.getElementById("birthdate").innerHTML = enterBirthInfo;
+  enterBirthInfo = "Happy late birthday " + enterBirthInfo + "! Congratulations, you made it all these years!";
+  }
+
+}
+
+
+
+</script>
+
+
+
+  </body>
+</html>
